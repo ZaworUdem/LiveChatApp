@@ -11,9 +11,15 @@
   </head>
 
   <body>
-    <%= render 'layouts/topnav' %>
+    <div class="ui small inverted menu">
+      <div class="ui container">
+        <%= render 'layouts/topnav' %>
+      </div>
+    </div>  
     <div class="ui container">
+      <%= render 'layouts/messages' %>
       <%= yield %>
     </div>
+
   </body>
 </html>
