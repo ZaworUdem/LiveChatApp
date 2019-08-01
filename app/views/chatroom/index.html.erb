@@ -6,15 +6,13 @@
 <div class="ui two column grid">
     <div class="twelve wide column">
         <div class="ui fluid raised card" style="height: 450px;">
-            <div class="content">
-                <div class="ui feed">
-                    <% @messages.each do |message|%>
+            <div class="content" id="messages">
+                <div class="ui feed" id="message-container">                   
                         <%= render @messages %>
-                    <% end %>
                 </div>
             </div>
             <div class="extra content">
-                <%= form_for(@message, html: {class: "ui reply form", role: "role"}, url: message_path) do |f| %>
+                <%= form_for(@message, html: {class: "ui reply form", role: "role"}, url: message_path, remote: true) do |f| %>
                     <div class="field">
                         <div class="ui fluid icon input">
                             <%= f.text_field :body %>
